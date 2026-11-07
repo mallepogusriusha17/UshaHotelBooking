@@ -1,0 +1,192 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Usha Online Hotel Room Booking Management System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <div class="logo">USHA <span>HOTELS</span></div>
+
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#rooms">Rooms</a>
+        <a href="#booking">Book Room</a>
+        <a href="#reservations">Reservations</a>
+        <a href="#admin">Admin</a>
+    </nav>
+</header>
+
+<section class="hero" id="home">
+    <div class="hero-content">
+        <p class="subtitle">WELCOME TO USHA HOTELS</p>
+        <h1>Find Your Perfect<br>Stay With Us</h1>
+
+        <p>
+            Experience comfort, luxury, and unforgettable hospitality.
+            Book your perfect room with ease.
+        </p>
+
+        <a href="#rooms" class="main-btn">Explore Rooms</a>
+    </div>
+
+    <div class="photo-container">
+        <img src="myphoto.jpg" alt="My Photo" class="my-photo">
+        <p>Welcome to Usha Hotels</p>
+    </div>
+</section>
+
+<section class="search-section">
+    <h2>Find Your Room</h2>
+
+    <div class="search-box">
+        <input type="date" id="searchCheckin">
+        <input type="date" id="searchCheckout">
+
+        <select id="searchType">
+            <option value="">All Room Types</option>
+            <option value="Single">Single</option>
+            <option value="Double">Double</option>
+            <option value="Deluxe">Deluxe</option>
+            <option value="Suite">Suite</option>
+        </select>
+
+        <button onclick="searchRooms()">Search Rooms</button>
+    </div>
+</section>
+
+<section class="rooms-section" id="rooms">
+    <div class="section-heading">
+        <p class="subtitle">OUR ACCOMMODATION</p>
+        <h2>Explore Our Rooms</h2>
+        <p>Choose the perfect room for your comfortable stay.</p>
+    </div>
+
+    <div class="room-container" id="roomContainer">
+        <!-- Rooms are displayed here -->
+    </div>
+</section>
+
+<section class="booking-section" id="booking">
+    <div class="section-heading">
+        <p class="subtitle">RESERVE YOUR STAY</p>
+        <h2>Book Your Room</h2>
+    </div>
+
+    <form id="bookingForm" class="booking-form">
+        <label>Customer ID</label>
+        <input type="number" id="customerId" required>
+
+        <label>Select Room</label>
+        <select id="bookingRoom" required>
+            <option value="">Select Room</option>
+        </select>
+
+        <label>Check-in Date</label>
+        <input type="date" id="checkin" required>
+
+        <label>Check-out Date</label>
+        <input type="date" id="checkout" required>
+
+        <button type="submit">Confirm Booking</button>
+    </form>
+</section>
+
+<section class="reservations-section" id="reservations">
+    <div class="section-heading">
+        <p class="subtitle">YOUR BOOKINGS</p>
+        <h2>Reservation Details</h2>
+    </div>
+
+    <div class="table-container">
+        <table>
+            <thead>
+                <tr>
+                    <th>Booking ID</th>
+                    <th>Customer</th>
+                    <th>Room</th>
+                    <th>Check-in</th>
+                    <th>Check-out</th>
+                    <th>Amount</th>
+                    <th>Status</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+
+            <tbody id="bookingTable">
+            </tbody>
+        </table>
+    </div>
+</section>
+
+<section class="admin-section" id="admin">
+    <div class="section-heading">
+        <p class="subtitle">ADMIN PANEL</p>
+        <h2>Manage Hotel Rooms</h2>
+    </div>
+
+    <form id="roomForm" class="booking-form">
+        <input type="hidden" id="roomId">
+
+        <label>Room Number</label>
+        <input type="text" id="roomNumber" required>
+
+        <label>Room Type</label>
+        <select id="roomType" required>
+            <option value="Single">Single</option>
+            <option value="Double">Double</option>
+            <option value="Deluxe">Deluxe</option>
+            <option value="Suite">Suite</option>
+        </select>
+
+        <label>Price Per Night</label>
+        <input type="number" id="roomPrice" step="0.01" required>
+
+        <label>Capacity</label>
+        <input type="number" id="roomCapacity" required>
+
+        <label>Status</label>
+        <select id="roomStatus">
+            <option value="Available">Available</option>
+            <option value="Booked">Booked</option>
+        </select>
+
+        <button type="submit" id="roomSubmit">Add Room</button>
+        <button type="button" class="reset-btn" onclick="resetRoomForm()">
+            Clear Form
+        </button>
+    </form>
+
+    <div class="table-container">
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Room Number</th>
+                    <th>Type</th>
+                    <th>Price</th>
+                    <th>Capacity</th>
+                    <th>Status</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+
+            <tbody id="adminRoomTable">
+            </tbody>
+        </table>
+    </div>
+</section>
+
+<footer>
+    <h2>USHA HOTELS</h2>
+    <p>Your comfort is our priority.</p>
+    <p>© 2026 Usha Online Hotel Room Booking Management System</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
